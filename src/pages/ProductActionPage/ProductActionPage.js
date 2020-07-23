@@ -18,10 +18,10 @@ class ProductActionPage extends Component {
    componentDidMount() {
       var { match } = this.props;
       if (match) {
-
+         
          var id = match.params.id;
          this.props.onGetProduct(id);
-      }
+      };
    }
 
    componentDidUpdate(prevProps, prevState) {
@@ -33,6 +33,7 @@ class ProductActionPage extends Component {
             txtPrice: itemEditing.price,
             chkbStatus: itemEditing.status
          });
+        
       }
    }
 
@@ -68,7 +69,7 @@ class ProductActionPage extends Component {
 
 
    render() {
-
+      console.log(this.props);
       var { id, txtName, txtPrice, chkbStatus } = this.state;
       var nameLegend = id === '' ? 'Create new product' : 'Update product';
       return (
